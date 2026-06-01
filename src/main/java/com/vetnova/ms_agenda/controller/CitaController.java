@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.*;
 
+import com.vetnova.ms_agenda.dto.MascotaDTO;
 import com.vetnova.ms_agenda.model.Cita;
 import com.vetnova.ms_agenda.service.CitaService;
 
@@ -11,7 +12,6 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("api/v1/citas")
-
 public class CitaController {
 
     private final CitaService service;
@@ -28,5 +28,10 @@ public class CitaController {
     @PostMapping
     public Cita guardar(@Valid @RequestBody Cita cita) {
         return service.guardar(cita);
+    }
+
+    @GetMapping("/mascotas")
+    public List<MascotaDTO> obtenerMascotas() {
+        return service.obtenerMascotas();
     }
 }
