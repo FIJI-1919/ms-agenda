@@ -1,38 +1,22 @@
-package com.vetnova.ms_agenda.model;
+package com.vetnova.ms_agenda.dto;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "citas")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Cita {
+@NoArgsConstructor
+public class CitaResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private Long mascotaId;
-
     private LocalDate fecha;
-
     private LocalTime hora;
-
     private String veterinario;
-
     private String motivo;
-
     private String estado;
 }

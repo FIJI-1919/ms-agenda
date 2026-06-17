@@ -9,6 +9,6 @@ public class MascotaDTO {
     private String nombre;
     private String especie;
     private String raza;
-    private int edad;
+    private Double edad;
     private Long duenoId;
 }
