@@ -118,7 +118,7 @@ public class CitaService {
             logger.info("Consultando mascotas desde ms-mascotas");
 
             return webClient.get()
-                    .uri("http://localhost:8081/api/mascotas")
+                    .uri("http://localhost:8083/api/mascotas")
                     .retrieve()
                     .bodyToFlux(MascotaDTO.class)
                     .collectList()
@@ -137,7 +137,7 @@ public class CitaService {
             logger.info("Validando mascota con ID: " + mascotaId);
 
             webClient.get()
-                    .uri("http://localhost:8081/api/mascotas/" + mascotaId)
+                    .uri("http://localhost:8083/api/mascotas/" + mascotaId)
                     .retrieve()
                     .bodyToMono(MascotaDTO.class)
                     .block();
